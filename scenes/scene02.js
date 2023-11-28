@@ -22,6 +22,7 @@ renderer.setAnimationLoop(() => {
 
     x3.tick()
 
+    //exibe o FPS para o usuário, usado para ver se o projeto está muito pesado
     x3.fps(()=>{
         renderer.render(scene, camera)
     })
