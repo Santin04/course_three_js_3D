@@ -1,6 +1,9 @@
 //criando o material que os objetos vão usar
 const material = new THREE.MeshLambertMaterial(
-    {color: 0x348feb}
+    {
+        color: 0x348feb,
+        side: THREE.DoubleSide //deixa o plane e circle visivel por todos ângulos
+    }
 )
 
 

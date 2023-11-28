@@ -1,7 +1,11 @@
 //criando um cone
 const material = new THREE.MeshLambertMaterial(
-    {color: 0x348feb}
+    {
+        color: 0x348feb,
+        side: THREE.DoubleSide //deixa o plane e circle visivel por todos ângulos
+    }
 )
+
 const cube = new THREE.Mesh(new THREE.BoxBufferGeometry(), material)
 
 scene.add(cube)
