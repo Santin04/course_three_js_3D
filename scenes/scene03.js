@@ -3,6 +3,7 @@ const material = new THREE.MeshLambertMaterial(
     {
         color: 0x348feb,
         side: THREE.DoubleSide //deixa o plane e circle visivel por todos ângulos
+        //isto também deixa os materiais preenchido por dentro, um cubo para de ser oco com isso
     }
 )
 
