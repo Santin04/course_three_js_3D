@@ -22,7 +22,7 @@ scene.add(cylinder)
 //criando um plano (parede/chãos)
 const plane = new THREE.Mesh(
     new THREE.PlaneBufferGeometry(
-        //raio de cima, raio de baixo e altura
+        //lado e comprimento
         1.5, 1.5,
     ),
     material
