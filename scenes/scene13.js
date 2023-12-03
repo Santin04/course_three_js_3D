@@ -1,7 +1,18 @@
 //baixando um material da internet e usando no projeto
 const loader = new THREE.TextureLoader()
 
-const polyester = new THREE.MeshStandardMaterial({ map: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/polyester/basecolor.jpg') })
+const polyester = new THREE.MeshStandardMaterial({ 
+    //definindo o desenho do material
+    map: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/polyester/basecolor.jpg'),
+    //definindo a textura do material
+    normalMap: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/polyester/normal.jpg')
+})
+
+//criando material do chão
+const wood = new THREE.MeshStandardMaterial({
+    map: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/wood/basecolor.jpg'),
+    normalMap: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/wood/normal.jpg')
+})
 
 // Criando uma esfera
 const ballGeometry = new THREE.SphereBufferGeometry(1, 60, 60);
@@ -19,8 +30,8 @@ scene.add(ball);
 
 // Criando um plano (chão)
 const floorGeometry = new THREE.PlaneBufferGeometry(10, 10);
-const floorMaterial = new THREE.MeshPhysicalMaterial({ color: 0xff0909, side: THREE.DoubleSide, metalness: 0.48, roughness: 0.57 });
-const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+const floorMaterial = new THREE.MeshPhysicalMaterial({ color: 0xFFFFFF, side: THREE.DoubleSide, metalness: 0.48, roughness: 0.57 });
+const floor = new THREE.Mesh(floorGeometry, wood);
 
 // Girando o plano para que ele seja o chão
 floor.rotation.x = THREE.MathUtils.degToRad(-90);
@@ -32,7 +43,7 @@ floor.receiveShadow = true;
 scene.add(floor);
 
 // Criando a iluminação da cena (ponto de luz)
-const pointLight = new THREE.PointLight(0xFFFFFF, 0.75);
+const pointLight = new THREE.PointLight(0xFFFFFF, 1);
 pointLight.position.y = 4; // Ajustando a posição da luz
 
 // Habilitando sombra para a luz

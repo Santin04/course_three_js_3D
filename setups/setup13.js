@@ -34,12 +34,12 @@ scene.background = new THREE.Color(options.backgroundColor)
 
 //criando a camera que vai fazer com que seja possível visualizar o objeto 3d
 const camera = new THREE.PerspectiveCamera(50, options.width / options.height)
-camera.position.x = 1.5
-camera.position.y = 3.5
-camera.position.z = 8.5
+camera.position.x = 1.65
+camera.position.y = 6.23
+camera.position.z = 4.41
 
 //criando a luz, definindo a cor, a intensidade
-const light = new THREE.HemisphereLight(0xFFFFFF, 0x080820, 1.41)
+const light = new THREE.HemisphereLight(0xFFFFFF, 0x080820, 2.5)
 scene.add(light) //adicionando a luz na cena
 
 //melhor visualização das 3 dimensões do desenho 3d
